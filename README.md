@@ -111,6 +111,45 @@ El LED RGB cambia de color según el estado:
 ### 5. 🖥️ Visualización 
 Desde una pantalla LCD se pueden visualizar los datos del sistema en tiempo real. Además, una interfaz en Node-RED permite activar el riego manualmente o revisar datos históricos.
 
+
+
+---
+
+## 🌿 Interfaz Gráfica
+
+La interfaz fue desarrollada en **Node-RED** y permite:
+
+- Visualizar en tiempo real los niveles de humedad de cada maceta.
+- Activar o desactivar manualmente el sistema de riego desde cualquier navegador.
+- Visualizar gráficas históricas de humedad por maceta.
+- Ver el estado actual del sistema (Riego activo/inactivo).
+- Recibir alertas cuando se detecta baja humedad en alguna maceta.
+- Registrar métricas del tiempo de riego de las últimas 10 sesiones.
+
+**Ejemplo de interfaz:**
+
+<img src="https://github.com/user-attachments/assets/vertigarden-dashboard.png" width="600"/>
+
+---
+
+## 🏗️ Estructura Física
+
+El sistema de riego vertical está construido sobre una estructura modular que incluye:
+
+- Tres niveles de macetas conectadas por un sistema de riego compartido.
+- Una válvula solenoide central controlada por ESP32 para distribuir el agua equitativamente.
+- Sensores de humedad en cada nivel para monitoreo independiente.
+- Bomba de agua conectada al sistema desde el nivel inferior.
+- Cableado ordenado y soportes impresos en 3D para sensores y válvula.
+
+**Imágenes del sistema:**
+
+> <img src="img/riego_vertical_frontal.jpg" width="400"/>  
+> <img src="img/soporte_sensor_humedad.jpg" width="400"/>
+
+---
+
+
 ## 🏠 Diagramas de las Placas
 
 Visualiza el diagrama completo de conexiones y componentes utilizados en el sistema **VERTIGARDEN** desde la siguiente plataforma:
