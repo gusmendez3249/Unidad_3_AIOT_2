@@ -160,8 +160,67 @@ Visualiza el diagrama completo de conexiones y componentes utilizados en el sist
   <img src="https://github.com/user-attachments/assets/209ee904-8123-4615-80f6-1fa2f4705cbb" alt="Diagrama del sistema" width="600">
 </p>
 
+---
+
+## 🌿 Almacenamiento de Datos
+
+Todos los datos generados por los sensores de humedad son registrados en una base de datos **PostgreSQL**, lo que permite:
+
+- Consultar los niveles de humedad.
+- Analizar el comportamiento del sistema de riego a lo largo del tiempo.
+- Enviar reportes de uso eficiente del agua a correo electronico.
+- Conectar con otras herramientas para análisis externo.
+
+---
+
+## 🔧 Expansión y Notificaciones
+
+El sistema fue desarrollado con una estructura flexible que permite:
+
+- Añadir nuevas macetas y sensores.
+- Configurar alertas automáticas vía **correo electrónico** cuando el nivel de humedad cae por debajo del mínimo.
+- Posibilidad de incluir nuevos módulos como sensores de clima, caudalímetros o predicción de riego.
+- Integración futura con asistentes virtuales y apps móviles.
+
+---
+
+## 🎬 Material Multimedia
+
+### 🔍 Videos por componentes
+🎥 [Funcionamiento de sensores, bomba y válvula](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+
+### 🌱 Demostración del sistema completo
+📹 [Simulación del riego automático](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+
+### 📣 Opiniones de prueba del sistema
+📤 [Retroalimentación de usuarios y pruebas](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+
+### 🧪 Evidencia de desarrollo en clase
+📝 [Ejercicios prácticos y prototipos](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+
+---
+
+## 🧠 Conclusión del Proyecto
+
+**VERTI-GARDEN SYSTEM** es una solución tecnológica de bajo consumo enfocada en la automatización del riego en espacios verticales. Reduce el desperdicio de agua, facilita el mantenimiento de plantas en áreas urbanas y puede ser gestionado desde cualquier lugar con acceso a red. Combina electrónica, software y sostenibilidad en un mismo sistema.
+
+---
+
+## 📦 Organización del Proyecto
+
+```text
+/vertical-irrigation-system/
+├── images/              # Fotografías y diagramas del sistema
+├── documentation/       # Guías técnicas, PDF y diagramas
+├── nodered-flows/       # Flujos exportados de Node-RED
+├── firmware-esp32/      # Código en MicroPython para sensores y actuadores
+├── sql-db/              # Scripts de inicialización de PostgreSQL
+├── notifications/       # WebApp para alertas automáticas
+├── README.md            # Documentación principal
+└── ...                  # Otros recursos (scripts, configuraciones, etc.)
 
 
+```
 ## ✍️ Autores
 
 - **Nombre del equipo**: VERTIGARDEN
