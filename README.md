@@ -115,12 +115,11 @@ Desde una pantalla LCD se pueden visualizar los datos del sistema en tiempo real
 
 ---
 
-## 🌿 Interfaz Gráfica
+## 🌿 Interfaz Gráfica DashBoard
 
-La interfaz fue desarrollada en **Node-RED** y permite:
+La interfaz fue desarrollada en **Node-RED** utilizando **DashBoard** y permite:
 
 - Visualizar en tiempo real los niveles de humedad de cada maceta.
-- Activar o desactivar manualmente el sistema de riego desde cualquier navegador.
 - Visualizar gráficas históricas de humedad por maceta.
 - Ver el estado actual del sistema (Riego activo/inactivo).
 - Recibir alertas cuando se detecta baja humedad en alguna maceta.
@@ -140,7 +139,7 @@ El sistema de riego vertical está construido sobre una estructura modular que i
 - Una válvula solenoide central controlada por ESP32 para distribuir el agua equitativamente.
 - Sensores de humedad en cada nivel para monitoreo independiente.
 - Bomba de agua conectada al sistema desde el nivel inferior.
-- Cableado ordenado y soportes impresos en 3D para sensores y válvula.
+- Cableado ordenado y soportes impresos en 3D.
 
 **Imágenes del sistema:**
 
