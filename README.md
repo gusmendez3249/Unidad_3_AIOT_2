@@ -35,5 +35,120 @@ Este proyecto integra múltiples sensores y actuadores conectados a través de u
 | **MQTT**           | Protocolo de mensajería entre nodos ESP32 y Node Red |
 | **Impresión 3D**   | Estructuras físicas y mecanismos personalizados      |
 
-## 🖥️ Estructura del Proyecto
+
+## 🧠 Arquitectura del Sistema – VertiGarden 🌿
+
+```plaintext
+                  [ESP32 Principal]
+        ┌───────────────────────────────────────────┐
+        │ • Sensor de Humedad Capa 1                │
+        │ • Sensor de Humedad Capa 2                │
+        │ • Sensor de Humedad Capa 3                │
+        │ • Sensor de Flujo de Agua                 │
+        │ • Válvula Solenoide                       │
+        │ • Bomba de Agua                           │
+        │ • Pantalla TFT LCD 2.8"                   │
+        │ • LED RGB (estado del sistema)            │
+        └───────────────────────────────────────────┘
+                         │
+                         ▼
+                        MQTT
+                         │
+                         ▼
+                  [🌐 Node-RED ]
+        ┌────────────────────────────────────────────┐
+        │ • Visualización en tiempo real             │
+        │ • Control manual y automático              │       
+        └────────────────────────────────────────────┘
+                         │
+                         ▼
+               [🗄️ Base de Datos PostgreSQL]
+        ┌────────────────────────────────────────────┐
+        │ • Registro histórico de humedad y riego    │
+        │ • Datos para análisis y reportes           │
+        └────────────────────────────────────────────┘
+```
+
+## 🧹 **Tabla de Actuadores**
+
+| **Nombre**             | **Tipo**              | **Uso**                                                                 | **Imagen** |
+|------------------------|-----------------------|------------------------------------------------------------------------|------------|
+| **Bomba de Agua 12V**  | Electromecánico       | Activar el flujo de agua hacia el jardín vertical                      | <img src="https://github.com/user-attachments/assets/28352478-d119-49cb-a753-c356e652d453" width="100"> |
+| **Válvula Solenoide**  | Electroválvula        | Controlar el paso de agua hacia cada sección o capa                    | <img src="https://github.com/user-attachments/assets/2213f93a-a60e-418c-8599-002cefb22ace" width="100"> |
+| **Pantalla LCD 2.8”**  | Visualización         | Mostrar información de humedad, estado de riego y alertas del sistema | <img src="https://github.com/user-attachments/assets/abba870c-b2ca-45a9-a737-c8653a4ad93c" width="100"> |
+| **LED RGB**            | Indicador Visual      | Mostrar estado general del sistema (óptimo, regando, alerta, etc.)     | <img src="https://github.com/user-attachments/assets/b1393576-9d7f-4fde-a678-2a730e94959d" width="100"> |
+
+---
+
+## 🌱 **Tabla de Sensores**
+
+| **Nombre**                      | **Tipo**              | **Uso**                                                                   | **Imagen** |
+|----------------------------------|-----------------------|----------------------------------------------------------------------------|------------|
+| **Sensor de Humedad Capacitivo** | Humedad del sustrato  | Medir el nivel de humedad en distintas capas del jardín vertical           | <img src="https://github.com/user-attachments/assets/e8c09489-97b0-481a-9177-c06eb030c0c3" width="100"> |
+| **Sensor de Flujo YF-S201**      | Caudalímetro          | Medir el caudal de agua que pasa por el sistema de riego                   | <img src="https://github.com/user-attachments/assets/2281917f-7c69-4482-82fe-e7befda65064" width="100"> |
+
+---
+
+## ⚙️ **Funcionalidad del Sistema**
+
+El sistema **VERTIGARDEN** automatiza el riego de un jardín vertical mediante sensores y actuadores estratégicamente integrados. Su funcionalidad principal se organiza en los siguientes procesos:
+
+### 1. 🌡️ Monitoreo Multicapa de Humedad
+Sensores capacitivos instalados en tres capas del jardín vertical permiten conocer en tiempo real el nivel de humedad en cada sección.
+
+### 2. 💧 Activación Inteligente del Riego
+Cuando una o más capas presentan humedad baja, se activa la bomba de agua y la válvula correspondiente, enfocando el riego solo en las zonas que lo requieren.
+
+### 3. 📏 Medición de Caudal
+El sensor YF-S201 registra la cantidad exacta de agua utilizada, permitiendo calcular el consumo y detectar fallas (como flujo insuficiente).
+
+### 4. 🔵 Indicador de Estado por LED RGB
+El LED RGB cambia de color según el estado:
+- 🟢 Verde: Humedad óptima  
+- 🔵 Azul: Riego activo  
+- 🔴 Rojo: Falla detectada o bajo caudal
+
+### 5. 🖥️ Visualización 
+Desde una pantalla LCD se pueden visualizar los datos del sistema en tiempo real. Además, una interfaz en Node-RED permite activar el riego manualmente o revisar datos históricos.
+
+## 🏠 Diagramas de las Placas
+
+Visualiza el diagrama completo de conexiones y componentes utilizados en el sistema **VERTIGARDEN** desde la siguiente plataforma:
+
+🔗 **Proyecto en Cirkit Designer**  
+[Haz clic aquí para ver el diagrama interactivo](https://app.cirkitdesigner.com/project/68e0465e-dece-4ab6-84fe-c091308ddfd5)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/209ee904-8123-4615-80f6-1fa2f4705cbb" alt="Diagrama del sistema" width="600">
+</p>
+
+
+
+## ✍️ Autores
+
+- **Nombre del equipo**: VERTIGARDEN
+- **Integrantes**:
+  - Cruz Méndez Juan Gustavo Ángel
+  - Oropeza Yepiz Cristian Efrín
+  - Salinas Salinas Omar
+
+---
+
+## 📌 Autoevaluación y coevaluación
+
+### Cruz Méndez Juan Gustavo Ángel
+
+#### AutoEvaluación:
+#### CoEvaluación:
+
+### Oropeza Yepiz Cristian Efrín
+
+#### AutoEvaluación:
+#### CoEvaluación:
+
+### Salinas Salinas Omar
+
+#### AutoEvaluación:
+#### CoEvaluación:
+
 
