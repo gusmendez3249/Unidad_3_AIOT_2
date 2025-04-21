@@ -185,13 +185,10 @@ El sistema fue desarrollado con una estructura flexible que permite:
 ## 🎬 Material Multimedia
 
 ### 🔍 Videos por componentes
-🎥 [Funcionamiento de sensores, bomba y válvula](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+🎥 [Funcionamiento de sensores, bomba y válvula](https://drive.google.com/drive/folders/1TCuIVjoKcGJ-OH3HvJeOxbSiyeZHVh73?usp=sharing)
 
 ### 🌱 Demostración del sistema completo
-📹 [Simulación del riego automático](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
-
-### 📣 Opiniones de prueba del sistema
-📤 [Retroalimentación de usuarios y pruebas](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+📹 [Simulación del riego automático]()
 
 ### 🧪 Evidencia de desarrollo en clase
 📝 [Ejercicios prácticos y prototipos](https://drive.google.com/drive/folders/1UCjZf1Dyts2afRVda1kKaeM01rc2cGyx?usp=sharing)
