@@ -141,8 +141,8 @@ El sistema de riego vertical está construido sobre una estructura modular que i
 
 **Imágenes del sistema:**
 
-> <img src="img/riego_vertical_frontal.jpg" width="400"/>  
-> <img src="img/soporte_sensor_humedad.jpg" width="400"/>
+> <img src="https://github.com/user-attachments/assets/96738964-06de-4835-9b8d-ed0fa96cb9e0" width="400"/>  
+> <img src="https://github.com/user-attachments/assets/dfa6b504-4453-4814-a701-03ff2f32cf39" width="400"/>
 
 ---
 
@@ -188,7 +188,7 @@ El sistema fue desarrollado con una estructura flexible que permite:
 🎥 [Funcionamiento de sensores, bomba y válvula](https://drive.google.com/drive/folders/1TCuIVjoKcGJ-OH3HvJeOxbSiyeZHVh73?usp=sharing)
 
 ### 🌱 Demostración del sistema completo
-📹 [Simulación del riego automático]()
+📹 [Simulación del riego automático](https://drive.google.com/drive/folders/1ZkmVhPTaFoO9hK0RorH6tKAx9eoci6xr?usp=sharing)
 
 ### 🧪 Evidencia de desarrollo en clase
 📝 [Ejercicios prácticos y prototipos](https://drive.google.com/drive/folders/1UCjZf1Dyts2afRVda1kKaeM01rc2cGyx?usp=sharing)
