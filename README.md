@@ -45,7 +45,6 @@ Este proyecto integra múltiples sensores y actuadores conectados a través de u
         │ • Sensor de Humedad Capa 2                │
         │ • Sensor de Humedad Capa 3                │
         │ • Sensor de Flujo de Agua                 │
-        │ • Válvula Solenoide                       │
         │ • Bomba de Agua                           │
         │ • Pantalla TFT LCD 2.8"                   │
         │ • LED RGB (estado del sistema)            │
@@ -74,7 +73,6 @@ Este proyecto integra múltiples sensores y actuadores conectados a través de u
 | **Nombre**             | **Tipo**              | **Uso**                                                                 | **Imagen** |
 |------------------------|-----------------------|------------------------------------------------------------------------|------------|
 | **Bomba de Agua 12V**  | Electromecánico       | Activar el flujo de agua hacia el jardín vertical                      | <img src="https://github.com/user-attachments/assets/28352478-d119-49cb-a753-c356e652d453" width="100"> |
-| **Válvula Solenoide**  | Electroválvula        | Controlar el paso de agua hacia cada sección o capa                    | <img src="https://github.com/user-attachments/assets/2213f93a-a60e-418c-8599-002cefb22ace" width="100"> |
 | **Pantalla LCD 2.8”**  | Visualización         | Mostrar información de humedad, estado de riego y alertas del sistema | <img src="https://github.com/user-attachments/assets/abba870c-b2ca-45a9-a737-c8653a4ad93c" width="100"> |
 | **LED RGB**            | Indicador Visual      | Mostrar estado general del sistema (óptimo, regando, alerta, etc.)     | <img src="https://github.com/user-attachments/assets/b1393576-9d7f-4fde-a678-2a730e94959d" width="100"> |
 
@@ -97,7 +95,7 @@ El sistema **VERTIGARDEN** automatiza el riego de un jardín vertical mediante s
 Sensores capacitivos instalados en tres capas del jardín vertical permiten conocer en tiempo real el nivel de humedad en cada sección.
 
 ### 2. 💧 Activación Inteligente del Riego
-Cuando una o más capas presentan humedad baja, se activa la bomba de agua y la válvula correspondiente, enfocando el riego solo en las zonas que lo requieren.
+Cuando una o más capas presentan humedad baja, se activa la bomba de agua correspondiente, enfocando el riego solo en las zonas que lo requieren.
 
 ### 3. 📏 Medición de Caudal
 El sensor YF-S201 registra la cantidad exacta de agua utilizada, permitiendo calcular el consumo y detectar fallas (como flujo insuficiente).
@@ -105,8 +103,8 @@ El sensor YF-S201 registra la cantidad exacta de agua utilizada, permitiendo cal
 ### 4. 🔵 Indicador de Estado por LED RGB
 El LED RGB cambia de color según el estado:
 - 🟢 Verde: Humedad óptima  
-- 🔵 Azul: Riego activo  
-- 🔴 Rojo: Falla detectada o bajo caudal
+- 🔵 Azul: Exceso de Humedad
+- 🟣 Morado: Seco
 
 ### 5. 🖥️ Visualización 
 Desde una pantalla LCD se pueden visualizar los datos del sistema en tiempo real. Además, una interfaz en Node-RED permite activar el riego manualmente o revisar datos históricos.
