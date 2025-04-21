@@ -194,7 +194,7 @@ El sistema fue desarrollado con una estructura flexible que permite:
 📤 [Retroalimentación de usuarios y pruebas](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
 
 ### 🧪 Evidencia de desarrollo en clase
-📝 [Ejercicios prácticos y prototipos](https://drive.google.com/drive/folders/1GOXApjWNVipbJKVLVaaz4QoqaaGXq0BR?usp=sharing)
+📝 [Ejercicios prácticos y prototipos](https://drive.google.com/drive/folders/1UCjZf1Dyts2afRVda1kKaeM01rc2cGyx?usp=sharing)
 
 ---
 
