@@ -234,16 +234,132 @@ El sistema fue desarrollado con una estructura flexible que permite:
 ### Cruz Méndez Juan Gustavo Ángel
 
 #### AutoEvaluación:
+*¿Qué hice bien?*
+
+Durante el desarrollo del proyecto VERTIGARDEN, me desempeñé eficazmente en la integración de los sensores de humedad por capas y su calibración. Fui constante en las pruebas de hardware y aseguré la estabilidad de los datos obtenidos. También destaqué en habilidades blandas como la organización y responsabilidad, cumpliendo con los plazos y manteniendo una comunicación clara con el equipo en cada etapa del proyecto.
+
+*¿Qué hice mal?*
+
+Uno de los errores que reconozco fue no registrar detalladamente las configuraciones electrónicas y los cambios en el firmware del ESP32. Esto dificultó la comprensión de mis avances por parte del equipo. Además, por momentos me costó tomar iniciativa para resolver ciertos problemas, lo que afectó ligeramente la fluidez de nuestro desarrollo conjunto durante las semanas intermedias del proyecto.
+
+*¿Qué puedo mejorar?*
+
+Considero que puedo mejorar en la documentación técnica, ya que registrar adecuadamente cada avance puede facilitar el mantenimiento del sistema en el futuro. Además, quiero fortalecer mi proactividad y liderazgo, participando con mayor decisión en las fases de análisis y proponiendo soluciones cuando surjan obstáculos técnicos o de organización dentro del equipo.
+
 #### CoEvaluación:
+
+**Sobre Cristian Oropeza**
+
+*¿Qué hizo bien?*
+
+Cristian se desempeñó muy bien en el diseño y programación de la interfaz gráfica del sistema en la pantalla TFT. Logró que la presentación de los datos fuera clara, ordenada y visualmente atractiva. Su constancia y enfoque técnico permitieron que el sistema fuera más intuitivo para el usuario, lo cual fue clave para la funcionalidad general del proyecto.
+
+*¿Qué hizo mal?*
+
+A pesar de su buen trabajo en el área visual, en algunas ocasiones no participó de manera activa en las reuniones grupales donde se tomaban decisiones técnicas importantes. Esto generó cierta desconexión con los avances del resto del equipo, lo que en algunos momentos provocó trabajos duplicados o mal sincronizados con los demás módulos del sistema.
+
+*¿Qué puede mejorar?*
+
+Puede mejorar su participación en las decisiones generales del equipo, especialmente cuando los avances de su área afectan a otros integrantes. Si logra involucrarse más en el flujo de comunicación y en la planeación conjunta, su impacto será aún mayor y se podrán evitar retrasos o confusiones al momento de integrar los distintos elementos del sistema.
+
+**Sobre Omar Salinas**
+
+*¿Qué hizo bien?*
+Omar mostró un alto nivel de compromiso en el desarrollo de la lógica de riego automático. Estuvo a cargo de implementar el comportamiento del sistema en función de la lectura de los sensores de humedad y se destacó por encontrar soluciones técnicas a problemas que surgieron en la etapa de pruebas. Su iniciativa fue importante para el avance del equipo.
+
+*¿Qué hizo mal?*
+Uno de los aspectos negativos fue que, en algunas ocasiones, Omar trabajó de manera muy independiente en la parte del código de control, sin comunicar adecuadamente sus avances. Esto generó dificultades al momento de integrar todos los módulos, ya que no siempre coincidían los criterios de diseño o las estructuras de datos entre su parte y la de los demás.
+
+*¿Qué puede mejorar?*
+Podría enfocarse en compartir sus avances con más regularidad y buscar la opinión de los compañeros para asegurar que todo esté alineado. Mejorar su comunicación dentro del equipo le permitirá no solo facilitar la integración, sino también enriquecer su trabajo con nuevas ideas que puedan surgir de la colaboración constante.
 
 ### Oropeza Yepiz Cristian Efrín
 
 #### AutoEvaluación:
+
+*¿Qué hice bien?*
+
+Mi mayor aporte al proyecto fue el desarrollo de la interfaz gráfica en pantalla, donde mostré habilidades técnicas de diseño, visualización de datos y control de estado del sistema. Además, destaqué por mi constancia, actitud colaborativa y disposición para resolver errores de software. A nivel de habilidades blandas, mantuve buena comunicación con el equipo y estuve disponible para apoyar en tareas fuera de mi asignación directa.
+
+*¿Qué hice mal?*
+
+En algunas fases del proyecto me faltó organización y no documenté adecuadamente ciertos fragmentos de código. También tardé en familiarizarme con el entorno de Thonny y la placa ESP32, lo cual provocó retrasos en la parte inicial del desarrollo. Finalmente, reconozco que pude involucrarme más en la parte de análisis del sistema y aportar ideas desde el enfoque funcional y no solo visual.
+
+*¿Qué puedo mejorar?*
+
+Debo mejorar la planificación personal de mis tareas y optimizar el uso del tiempo para evitar acumulación de trabajo. También quiero fortalecer mis habilidades de documentación y aportar más en fases de toma de decisiones técnicas. En próximos proyectos, buscaré participar de forma más integral y proponer ideas que abarquen tanto la lógica como la presentación del sistema.
+
 #### CoEvaluación:
+
+**Sobre Juan Gustavo Ángel Cruz*
+
+*¿Qué hizo bien?*
+
+Juan Gustavo tuvo un rol fundamental en la instalación y calibración de los sensores de humedad, logrando lecturas estables y útiles para la lógica del sistema. Fue muy dedicado en las pruebas de campo y mostró responsabilidad al encargarse de tareas críticas del sistema. Su actitud de apoyo al equipo también fue constante durante todo el desarrollo del proyecto.
+
+*¿Qué hizo mal?*
+
+En algunas etapas avanzó por su cuenta sin notificar en qué parte del sistema estaba trabajando, lo que provocó pequeños conflictos de integración. A veces le faltó consultar ciertas decisiones técnicas que afectaban el funcionamiento conjunto, especialmente cuando se trataba de conexiones o pruebas que impactaban otras áreas del hardware.
+
+*¿Qué puede mejorar?*
+
+Podría mejorar su participación en las sesiones de coordinación, comunicando con mayor claridad los avances y dificultades que enfrenta. Esto no solo mejoraría la sincronización del equipo, sino que también le permitiría recibir apoyo o ideas que complementen sus soluciones. Su trabajo es bueno, pero con más colaboración sería aún más eficiente.
+
+**Sobre Omar Salinas**
+
+*¿Qué hizo bien?*
+
+Omar se destacó por desarrollar una lógica de riego automática muy efectiva, que respondió correctamente a los distintos niveles de humedad. Mostró seguridad al programar y una actitud muy resolutiva cuando surgieron errores en las pruebas. Además, siempre se mantuvo motivado y fue un gran impulsor del progreso del equipo en los momentos de mayor presión.
+
+*¿Qué hizo mal?*
+
+En algunos momentos tomó decisiones técnicas sin alinearlas con el resto del equipo, especialmente en el diseño del flujo de riego. Esto llevó a ajustes de último momento para que sus soluciones encajaran con la estructura general del sistema, generando trabajo adicional para el grupo en la integración final.
+
+*¿Qué puede mejorar?*
+
+Puede enfocarse en fortalecer la comunicación con el equipo, explicando con más detalle qué hace y por qué lo hace. También sería útil que documente mejor su código y sus decisiones, de modo que cualquier miembro pueda entender e intervenir en su módulo si es necesario. Su liderazgo técnico mejoraría aún más con estas prácticas.
 
 ### Salinas Salinas Omar
 
 #### AutoEvaluación:
+
+*¿Qué hice bien?*
+
+Participé activamente en el desarrollo de la lógica de riego automático basada en la lectura de sensores de humedad. Logré que el sistema respondiera correctamente ante diferentes niveles, optimizando el uso del agua. Además, ayudé en la integración de componentes electrónicos y resolución de errores. Me destaqué por mantener una buena actitud, promover el orden en el equipo y apoyar en momentos clave del trabajo colaborativo.
+
+*¿Qué hice mal?*
+
+En ocasiones me enfoqué demasiado en el desarrollo del código de control sin comunicarlo oportunamente al equipo, lo que complicó la integración con otras partes del sistema, como la interfaz o la validación de datos. También cometí errores en la conexión inicial de algunos componentes, por falta de revisar datasheets con más atención. Esto provocó algunos retrasos en las pruebas de campo.
+
+*¿Qué puedo mejorar?*
+
+Necesito mejorar la comunicación constante con el equipo, especialmente al trabajar en módulos que dependen de otros compañeros. También debo organizar mejor mis tiempos para equilibrar pruebas prácticas con documentación técnica. Finalmente, me gustaría desarrollar más habilidades de presentación, para explicar de forma sencilla el funcionamiento técnico de los componentes a mis compañeros y facilitar el trabajo en conjunto.
+
+
 #### CoEvaluación:
 
+**Sobre Juan Gustavo Ángel Cruz**
 
+*¿Qué hizo bien?*
+
+Juan Gustavo tuvo un excelente desempeño en la parte de sensores. Fue muy preciso al momento de instalar, probar y validar el comportamiento de cada uno. Además, fue de los primeros en tener lista su parte, lo cual permitió que el equipo pudiera avanzar en fases posteriores con una base sólida de datos y funcionamiento real del sistema.
+
+*¿Qué hizo mal?*
+A veces trabajaba en silencio sin compartir los detalles de lo que había probado o ajustado. Esto generaba dudas sobre el estado real del sistema y dificultaba que el resto del equipo pudiese coordinar acciones en conjunto. Aunque sus resultados eran buenos, la falta de actualizaciones al grupo complicaba un poco la organización general.
+
+*¿Qué puede mejorar?*
+Podría mejorar su participación en la comunicación diaria del equipo, informando con claridad qué avances tiene y qué problemas ha encontrado. Esto permitiría tomar decisiones más rápidas y con información completa. Además, compartir sus ideas con el equipo podría enriquecer aún más el enfoque técnico que está desarrollando.
+
+**Sobre Cristian Oropeza**
+
+*¿Qué hizo bien?*
+
+Cristian realizó un gran trabajo diseñando la interfaz del sistema. La visualización fue clara, funcional y permitió interpretar fácilmente los datos. También fue muy paciente y receptivo ante las sugerencias, ajustando la presentación para que se adaptara bien a las necesidades de todos los usuarios del sistema. Fue una pieza clave para dar una presentación profesional al proyecto.
+
+*¿Qué hizo mal?*
+
+En algunas ocasiones se limitó solamente a su área de diseño y no mostró mucho interés por entender otras partes del sistema, como el manejo de datos o la lógica de riego. Esto redujo su participación en discusiones más técnicas donde su perspectiva podría haber sido valiosa para mejorar la cohesión del proyecto.
+
+*¿Qué puede mejorar?*
+
+Podría involucrarse más allá de su módulo visual, aprendiendo un poco sobre cómo funciona la lógica del sistema completo. Esto le permitiría anticipar mejor lo que necesita mostrar en pantalla y proponer mejoras más conectadas con el funcionamiento interno. También enriquecería su conocimiento técnico general, que siempre es valioso para futuros proyectos.
