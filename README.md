@@ -125,7 +125,7 @@ La interfaz fue desarrollada en **Node-RED** utilizando **DashBoard** y permite:
 
 **Ejemplo de interfaz:**
 
-<img src="https://github.com/user-attachments/assets/vertigarden-dashboard.png" width="600"/>
+<img src="https://github.com/user-attachments/assets/0dba65ac-ebac-4846-ad4a-836fa12f9298" width="600"/>
 
 ---
 
