@@ -124,6 +124,8 @@ La interfaz fue desarrollada en **Node-RED** utilizando **DashBoard** y permite:
 - Registrar métricas del tiempo de riego de las últimas 10 sesiones.
 
 **Ejemplo de interfaz:**
+![Imagen de WhatsApp 2025-04-22 a las 23 09 35_f5490c59](https://github.com/user-attachments/assets/bab17c56-17e9-4bb0-81ba-01251313786b)
+
 
 <img src="https://github.com/user-attachments/assets/0dba65ac-ebac-4846-ad4a-836fa12f9298" width="600"/>
 
