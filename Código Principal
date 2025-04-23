@@ -1,0 +1,214 @@
+from machine import ADC, Pin, PWM
+import time
+import network
+import ujson
+from umqtt.simple import MQTTClient
+from urequests import post
+
+# Configuración WiFi
+WIFI_SSID = "ZONA PIPOLLA 2"
+WIFI_PASSWORD = "pgvmKVN2vC"
+
+# Config MQTT
+MQTT_BROKER = "192.168.1.230"
+MQTT_PORT = 1884
+MQTT_TOPIC = "vertigarden/datos"
+MQTT_CLIENT_ID = "ESP32_LED_RGB"
+
+# Config Email
+WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxNpacf8Sp-q0DXFj3L_TbI4cdr27MWhpdCMxxVyA20JXgsw01EJvXrSCrt57GobC0y5w/exec"
+
+# === Pines ===
+rele = Pin(18, Pin.OUT)         # Relé
+flow_pin = Pin(19, Pin.IN)      # Sensor de flujo
+
+# Sensores de humedad
+sensor1 = ADC(Pin(34))
+sensor2 = ADC(Pin(35))
+sensor3 = ADC(Pin(32))
+
+# LED RGB
+r = PWM(Pin(13), freq=1000)
+g = PWM(Pin(12), freq=1000)
+b = PWM(Pin(14), freq=1000)
+
+# === Funciones de conexión ===
+def conectar_wifi():
+    print("Conectando a WiFi...")
+    sta_if = network.WLAN(network.STA_IF)
+    sta_if.active(True)
+    sta_if.connect(WIFI_SSID, WIFI_PASSWORD)
+    while not sta_if.isconnected():
+        time.sleep(0.5)
+    print("✅ Conectado a WiFi:", sta_if.ifconfig())
+
+def conectar_mqtt():
+    print("Conectando a MQTT broker...")
+    cliente = MQTTClient(MQTT_CLIENT_ID, MQTT_BROKER, port=MQTT_PORT)
+    cliente.connect()
+    print("✅ Conectado a MQTT Broker:", MQTT_BROKER)
+    return cliente
+
+# === Conversión de humedad ===
+def convertir_a_porcentaje(valor_adc):
+    """Convierte valor ADC (0-4095) a porcentaje invertido (0% = muy húmedo, 100% = muy seco)"""
+    # Ajusta estos valores según tu calibración específica
+    porcentaje = 100 - int((valor_adc / 4095) * 100)
+    return max(0, min(100, porcentaje))  # Asegura que esté entre 0-100%
+
+# === Función para enviar emails ===
+def enviar_alerta_riego(h1_adc, h2_adc, h3_adc, estado_riego):
+    try:
+        # Convertir valores ADC a porcentaje para el email
+        h1 = convertir_a_porcentaje(h1_adc)
+        h2 = convertir_a_porcentaje(h2_adc)
+        h3 = convertir_a_porcentaje(h3_adc)
+        
+        data = {
+            "humedad1": h1,
+            "humedad2": h2,
+            "humedad3": h3,
+            "estadoRiego": estado_riego
+        }
+        print("📤 Enviando datos de email:", data)
+        r = post(WEBAPP_URL, json=data)
+        print("📤 Respuesta email:", r.text)
+        r.close()
+    except Exception as e:
+        print("❌ Error al enviar alerta email:", e)
+
+# === Configuración ADC ===
+for sensor in [sensor1, sensor2, sensor3]:
+    sensor.atten(ADC.ATTN_11DB)
+    sensor.width(ADC.WIDTH_12BIT)
+
+# === Variables de flujo ===
+pulse_count = 0
+def pulse_handler(pin):
+    global pulse_count
+    pulse_count += 1
+flow_pin.irq(trigger=Pin.IRQ_RISING, handler=pulse_handler)
+
+# === Control LED RGB ===
+def set_color(red, green, blue):
+    r.duty(1023 - red)
+    g.duty(1023 - green)
+    b.duty(1023 - blue)
+
+color_rojo = (1023, 0, 0)
+color_verde = (0, 1023, 0)
+color_azul = (0, 0, 1023)
+
+# === Evaluar humedad ===
+def evaluar_humedad(valor):
+    if valor > 2000:
+        return "seca"
+    elif 1000 <= valor <= 2000:
+        return "suficiente"
+    else:
+        return "exceso"
+
+# === Medir flujo de agua ===
+agua_ml = 0
+def medir_flujo_hasta_objetivo(objetivo_ml):
+    global pulse_count, agua_ml
+    pulse_count = 0
+    print("💦 Bomba encendida, midiendo flujo...")
+
+    while True:
+        ml_por_pulso = 10 / (2 * 60)  # ≈8.3 mL por pulso
+        agua_ml = pulse_count * ml_por_pulso
+        print("Agua pasada: {:.1f} mL".format(agua_ml), end="\r")
+        if agua_ml >= objetivo_ml:
+            break
+        time.sleep(0.1)
+
+# === Debug ===
+def debug_valores(val1, val2, val3):
+    print("\n🔍 Valores de DEBUG:")
+    print("Raw ADC - 1:", val1, "| 2:", val2, "| 3:", val3)
+    print("Porcentaje - 1:", convertir_a_porcentaje(val1), 
+          "| 2:", convertir_a_porcentaje(val2), 
+          "| 3:", convertir_a_porcentaje(val3))
+
+# === Main ===
+conectar_wifi()
+cliente = conectar_mqtt()
+estado_relevador_actual = 0
+
+while True:
+    print("\n📊 Leyendo humedad de macetas...")
+    valor1 = sensor1.read()
+    valor2 = sensor2.read()
+    valor3 = sensor3.read()
+    
+    debug_valores(valor1, valor2, valor3)  # Debug de valores
+
+    estado1 = evaluar_humedad(valor1)
+    estado2 = evaluar_humedad(valor2)
+    estado3 = evaluar_humedad(valor3)
+
+    print("Maceta 1 -", valor1, "->", estado1)
+    print("Maceta 2 -", valor2, "->", estado2)
+    print("Maceta 3 -", valor3, "->", estado3)
+
+    estados = [estado1, estado2, estado3]
+
+    # Control LED RGB
+    if "seca" in estados:
+        print("⚠ Maceta seca detectada → LED MORADO")
+        set_color(*color_verde)
+        color = "morado"
+    elif "exceso" in estados:
+        print("🌊 Exceso de agua detectado → LED AZUL")        
+        set_color(*color_rojo)
+        color = "rojo"
+    else:
+        print("✅ Humedad suficiente → LED VERDE")
+        set_color(*color_azul)
+        color = "azul"
+
+    # Control de riego
+    if "seca" in estados:
+        print("🚿 Encendiendo bomba...")
+        rele.on()
+        estado_relevador_actual = 1
+        time.sleep(2)
+        medir_flujo_hasta_objetivo(200)
+        rele.off()
+        time.sleep(1)
+        print("\n✅ Riego completado.")
+        enviar_alerta_riego(valor1, valor2, valor3, True)  # Envía email con estado de riego
+    else:
+        print("No se requiere riego.")
+        estado_relevador_actual = 0
+        enviar_alerta_riego(valor1, valor2, valor3, False)  # Envía email sin riego
+
+    # Envío MQTT
+    payload = {
+        "humedad": {
+            "maceta1": valor1,
+            "maceta2": valor2,
+            "maceta3": valor3
+        },
+        "flujo_agua": agua_ml,
+        "color": color,
+        "estado_relevador": estado_relevador_actual,
+        "porcentajes": {
+            "maceta1": convertir_a_porcentaje(valor1),
+            "maceta2": convertir_a_porcentaje(valor2),
+            "maceta3": convertir_a_porcentaje(valor3)
+        }
+    }
+
+    json_data = ujson.dumps(payload)
+    print("📤 Enviando datos MQTT:", json_data)
+    cliente.publish(MQTT_TOPIC, json_data)
+    
+    # Prueba manual de email (descomenta si necesitas probar)
+    # if False:  # Cambia a True para probar manualmente
+    #     print("\n🚨 PRUEBA MANUAL DE EMAIL")
+    #     enviar_alerta_riego(3000, 2500, 3500, True)
+    #     time.sleep(10)
+    
+    time.sleep(5)
