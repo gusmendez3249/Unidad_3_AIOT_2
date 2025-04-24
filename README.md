@@ -6,6 +6,35 @@
 
 Este proyecto integra múltiples sensores y actuadores conectados a través de una red de ESP32, coordinados mediante Node-RED. Incluye visualización gráfica del sistema, control manual desde un dashboard web y almacenamiento de datos históricos en PostgreSQL.
 
+## ✅ Aprobación del Proyecto
+
+El presente proyecto **VERTIGARDEN - Sistema Inteligente de Riego para Jardines Verticales** ha sido **aprobado por la Ingeniera Industrial Guadalupe Belén Helguera Méndez**, quien evaluó su viabilidad técnica, impacto ambiental y aplicabilidad en entornos urbanos.
+
+---
+
+### 📄 Carta de Aprobación Firmada
+
+> 📌 *A continuación se presenta la imagen de la carta firmada por la ingeniera, donde se aprueba oficialmente el desarrollo de VERTIGARDEN:*
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/fe777d4f-b8f9-44cf-bf81-fbf67637e0bc" alt="Carta de Aprobación - Ing. Guadalupe Belén Helguera Méndez" width="70%">
+</p>
+
+---
+
+### 🎥 Video de Presentación del Proyecto
+
+> 🎬 *Presentación oficial del proyecto ante la Ing. Guadalupe Belén Helguera Méndez, donde se explican las funcionalidades, objetivos y beneficios de VERTIGARDEN.*
+
+<p align="center">
+  <a href="https://drive.google.com/file/d/1nMbo3jtkzvXQnL6CLUtWsk7Mwqf9H60Y/view?usp=sharing" target="_blank">
+    <img src="https://img.shields.io/badge/Ver%20Video%20de%20Presentación-%F0%9F%93%BA-blue?style=for-the-badge" alt="Ver Video">
+  </a>
+</p>
+
+---
+
+
 ### ⚙️ Características principales
 
 - Medición de humedad por capas (3 sensores).
